@@ -20,3 +20,4 @@ Route::get('/refugios', function () {
  });
 Route::get('/', [ApplicationController::class, 'index']);
 Route::resource('/refugio',RefugiosController::class);
+Route::get('/verRefugios');

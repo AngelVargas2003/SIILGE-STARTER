@@ -90,6 +90,7 @@ import { mdiEyeOutline, mdiEyeOffOutline } from '@mdi/js'
 import DemoDatatableBasic from '../tables/datatable/demos/DemoDatatableBasic.vue';
 import DemoComboboxBasic from '../forms/form-elements/combobox/demos/DemoComboboxBasic.vue';
 import axios from 'axios';
+import { Inertia } from '@inertiajs/inertia'
 export default {
   components: { DemoDatatableBasic,DemoComboboxBasic },
     setup() {
@@ -102,12 +103,12 @@ export default {
             refugios:[]
         });
         function get(){
-          axios.get('/refugios').then(function(response){
+           axios.get('/refugios').then(function(response){
            form.refugios=response.data
           })
         }
         function submit(){
-            axios.post('/refugio',form)
+            Inertia.post('/refugio',form)
         }
         onMounted(get)
         return {
