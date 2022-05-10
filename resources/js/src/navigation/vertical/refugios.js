@@ -1,4 +1,4 @@
-import { mdiCheckboxMarkedCircleOutline, mdiContentCopy } from '@mdi/js'
+import { mdiAbacus, mdiAccountNetwork, mdiCheckboxMarkedCircleOutline, mdiContentCopy, mdiHomeAccount } from '@mdi/js'
 
 export default [
   {
@@ -6,7 +6,7 @@ export default [
   },
   {
       title:'Refugios',
-      icon:mdiContentCopy,
+      icon:mdiAccountNetwork,
       children:[
           {
               title:'Ver Refugios',
@@ -16,6 +16,18 @@ export default [
               title:'Agregar/Modificar refugios',
               to:'adminrefugios'
           }
-      ]
+      ],
+  },
+  {
+    title:'Centro Externo',
+    icon:mdiHomeAccount,
+    children:[
+      {
+        title:'Referencias'
+      },
+      {
+        title:'Concluye Proceso'
+      }
+    ]
   }
 ]

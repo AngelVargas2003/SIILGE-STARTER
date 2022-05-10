@@ -23,6 +23,7 @@
 
         <!-- Right Content: I18n, Light/Dark, Notification & User Dropdown -->
         <div class="d-flex align-center right-row">
+          <app-bar-theme-switcher></app-bar-theme-switcher>
           <app-bar-user-menu></app-bar-user-menu>
         </div>
       </div>
@@ -33,7 +34,7 @@
       <div class="d-flex justify-space-between">
         <span
           >COPYRIGHT &copy; {{ new Date().getFullYear() }}
-          <a href="https://themeselection.com" class="text-decoration-none">ThemeSelection</a
+          <a  class="text-decoration-none">SIILGE</a
           ><span class="d-none d-md-inline">, All rights Reserved</span></span
         >
         <div class="align-center d-none d-md-flex">
@@ -57,10 +58,10 @@ import AppBarSearch from '@core/layouts/components/app-bar/AppBarSearch.vue'
 import { mdiMenu, mdiHeartOutline } from '@mdi/js'
 import { getVuetify } from '@core/utils'
 import { ref, watch } from '@vue/composition-api'
+import AppBarThemeSwitcher from '@core/layouts/components/app-bar/AppBarThemeSwitcher.vue'
 import AppCustomizer from '@core/layouts/components/app-customizer/AppCustomizer.vue'
 import LayoutContentVerticalNav from '@/@core/layouts/variants/content/vertical-nav/LayoutContentVerticalNav.vue'
 import navMenuItems from '@/navigation/vertical'
-
 // App Bar Components
 import AppBarUserMenu from '@/components/AppBarUserMenu.vue'
 
@@ -70,7 +71,7 @@ import appBarSearchData from '@/assets/app-bar-search-data'
 export default {
   components: {
     LayoutContentVerticalNav,
-
+    AppBarThemeSwitcher,
     // App Bar Components
     AppBarSearch,
     AppBarUserMenu,

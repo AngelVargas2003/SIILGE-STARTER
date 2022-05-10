@@ -1,5 +1,5 @@
 <template>
-  <div>
+   <div>
     <v-tabs v-model="tab">
       <v-tab>Modificar Refugio</v-tab>
       <v-tab>Agregar Refugio</v-tab>
@@ -17,7 +17,7 @@
           </v-tab-item>
 
           <v-tab-item>
-            <v-form class="multi-col-validation mt-1">
+            <v-form class="multi-col-validation mt-1" @submit.prevent="submit">
               <v-row>
                 <v-col
                   cols="12"
@@ -60,10 +60,19 @@
                 </v-col>
                 <v-col>
                   <v-select
-                  solo-inverted
-                  :items="form.refugios"      
+                  solo-inverted 
+                  v-model="form.Refugio_id"
+                  item-text="Nombre"
+                  item-value="id" 
+                  :items="form.refugios"
                   >
                   </v-select>
+                </v-col>
+                <v-col cols="12"
+                md="6">
+                  <v-btn color="primary" type="submit">
+                  Registrar Refugio
+                </v-btn>
                 </v-col>
               </v-row>
             </v-form>
@@ -71,17 +80,6 @@
         </v-tabs-items>
       </v-card-text>
       <v-divider></v-divider>
-      <v-card-actions>
-        <v-btn color="primary">
-          Submit
-        </v-btn>
-        <v-btn
-          color="secondary"
-          outlined
-        >
-          Cancel
-        </v-btn>
-      </v-card-actions>
     </v-card>
   </div>
 </template>
@@ -105,15 +103,17 @@ export default {
         });
         function get(){
           axios.get('/refugios').then(function(response){
-           response.data.forEach(C=>{
-             form.refugios.push(C.Nombre)
-           })
+           form.refugios=response.data
           })
+        }
+        function submit(){
+            axios.post('/refugio',form)
         }
         onMounted(get)
         return {
             tab,
-            form
+            form,
+            submit
         };
     },
 }

@@ -4,7 +4,7 @@
       <v-img :src="appLogo" max-height="30px" max-width="30px" alt="logo" contain eager class="app-logo me-3"></v-img>
       <v-slide-x-transition>
         <h2 v-show="!(menuIsVerticalNavMini && !isMouseHovered)" class="app-title text--primary">
-          {{ appName }}
+          SIILGE
         </h2>
       </v-slide-x-transition>
     </router-link>

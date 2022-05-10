@@ -41,7 +41,7 @@ class RefugiosController extends Controller
     public function store(StoreRefugioRequest $request)
     {
         $variable=InformacionAdicional::create($request->validated());
-        return Inertia::render('crud');
+        return view('application');
     }
 
     /**
