@@ -12,4 +12,6 @@ class InformacionAdicional extends Model
     protected $fillable=['Estado','Numero_Nucleos','NumeroHabitaciones','Refugio_id'];
     public $timestamps=true;
     use HasFactory;
+
+    
 }
