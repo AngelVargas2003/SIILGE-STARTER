@@ -1,4 +1,4 @@
-import { mdiAbacus, mdiAccountNetwork, mdiCheckboxMarkedCircleOutline, mdiContentCopy, mdiHomeAccount } from '@mdi/js'
+import { mdiAbacus, mdiAccountNetwork, mdiCheckboxMarkedCircleOutline, mdiContentCopy, mdiHomeAccount, mdiHomeCircleOutline } from '@mdi/js'
 
 export default [
   {
@@ -6,7 +6,7 @@ export default [
   },
   {
       title:'Refugios',
-      icon:mdiAccountNetwork,
+      icon:mdiHomeCircleOutline,
       children:[
           {
               title:'Ver Refugios',
